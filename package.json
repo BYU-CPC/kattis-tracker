@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"axios": "^1.6.8",
+		"buffer": "^6.0.3",
 		"webext-base-css": "^1.4.3",
 		"webext-options-sync": "^4.2.1"
 	},
