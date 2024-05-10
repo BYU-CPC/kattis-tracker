@@ -12,8 +12,8 @@
 	"icons": {
 		"128": "icon.png"
 	},
-	"permissions": ["storage", "tabs", "activeTab", "scripting"],
-	"host_permissions": ["https://open.kattis.com/"],
+	"permissions": ["storage"],
+	"host_permissions": ["https://open.kattis.com/*"],
 	"content_scripts": [
 		{
 			"matches": ["https://open.kattis.com/*"],
