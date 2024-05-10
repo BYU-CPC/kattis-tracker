@@ -1,4 +1,9 @@
 {
+	"alias": {
+		"process": {
+			"global": "{}"
+		}
+	},
 	"private": true,
 	"scripts": {
 		"build": "parcel build",
