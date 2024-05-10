@@ -1,39 +1,25 @@
 {
-	"name": "Awesome Extension",
-	"version": "0.0.0",
-	"description": "An awesome new browser extension",
-	"homepage_url": "https://github.com/fregante/browser-extension-template",
+	"name": "Kattis Tracker",
+	"version": "0.0.1",
+	"description": "Kattis Submission Tracker for BYU CPC",
+	"homepage_url": "https://github.com/joshbtay/kattis-extension",
 	"manifest_version": 3,
-	"minimum_chrome_version": "100",
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "awesome-extension@notlmn.github.io",
-			"strict_min_version": "100.0"
+			"id": "byu-cpc-kattis-tracker"
 		}
 	},
 	"icons": {
 		"128": "icon.png"
 	},
-	"permissions": [
-		"storage"
-	],
-	"host_permissions": [
-		"https://github.com/*"
-	],
+	"permissions": ["storage", "tabs", "activeTab", "scripting"],
+	"host_permissions": ["https://open.kattis.com/"],
 	"content_scripts": [
 		{
-			"matches": [ "https://github.com/fregante/browser-extension-template/*" ],
-			"js": [ "content.js" ],
-			"css": [ "content.css" ],
+			"matches": ["https://open.kattis.com/*"],
+			"js": ["content.js"],
+			"css": ["content.css"],
 			"run_at": "document_end"
 		}
-	],
-	"options_ui": {
-		"browser_style": true,
-		"page": "options.html"
-	},
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
-	}
+	]
 }

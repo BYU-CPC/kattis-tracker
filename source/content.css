@@ -1,8 +1,119 @@
-#text-notice {
+#syncingBadge {
 	position: fixed;
-	top: 10px;
-	left: 10px;
+	top: 20px; /* Adjust this as necessary */
+	right: 20px; /* Adjust this as necessary */
+	background-color: #2227;
 	padding: 10px;
-	background: #fff;
-	z-index: 999999;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	font-family: Arial, sans-serif;
+	font-size: 25px;
+	z-index: 1000; /* Ensure it's on top */
+	color: #fff;
+	opacity: 1;
+	transform: scale(1);
+	backdrop-filter: blur(20px);
+	transition: all 0.5s ease;
+	animation: fadeInGrow 0.5s forwards;
+}
+
+#syncingBadge.shrink {
+	opacity: 0;
+	transform: scale(0.5);
+}
+
+.lds-roller {
+	/* change color here */
+	color: #fff;
+	margin-left: 10px;
+}
+.lds-roller,
+.lds-roller div,
+.lds-roller div:after {
+	box-sizing: border-box;
+}
+.lds-roller {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+.lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 15px 15px;
+}
+.lds-roller div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 2.7px;
+	height: 2.7px;
+	border-radius: 50%;
+	background: currentColor;
+	margin: -1.35px 0 0 -1.35px;
+}
+.lds-roller div:nth-child(1) {
+	animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+	top: 23.4852825px;
+	left: 23.4852825px;
+}
+.lds-roller div:nth-child(2) {
+	animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+	top: 25.39230375px;
+	left: 21px;
+}
+.lds-roller div:nth-child(3) {
+	animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+	top: 26.59111125px;
+	left: 18.10582875px;
+}
+.lds-roller div:nth-child(4) {
+	animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+	top: 27px;
+	left: 15px;
+}
+.lds-roller div:nth-child(5) {
+	animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+	top: 26.59111125px;
+	left: 11.89417125px;
+}
+.lds-roller div:nth-child(6) {
+	animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+	top: 25.39230375px;
+	left: 9px;
+}
+.lds-roller div:nth-child(7) {
+	animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+	top: 23.4852825px;
+	left: 6.5147175px;
+}
+.lds-roller div:nth-child(8) {
+	animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+	top: 21px;
+	left: 4.60769625px;
+}
+@keyframes lds-roller {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
