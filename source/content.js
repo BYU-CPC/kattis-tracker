@@ -59,9 +59,15 @@ async function getSubmissionPages(username, getAllPages) {
 		rows.forEach((row) => {
 			const accepted = row.querySelector("div.is-status-accepted");
 			if (accepted) {
-				const time = row
-					.querySelector('td[data-type="time"]')
-					.textContent.trim();
+				let time = row.querySelector('td[data-type="time"]').textContent.trim();
+				if (time.length <= 10) {
+					const currentDate = new Date();
+					const year = currentDate.getFullYear();
+					const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Month starts from 0
+					const day = String(currentDate.getDate()).padStart(2, "0");
+					const formattedDate = `${year}-${month}-${day} `;
+					time = formattedDate + time;
+				}
 				const submissionId = row
 					.querySelector('td[data-type="actions"] a')
 					.href.split("/")
