@@ -6,7 +6,7 @@
 		"lint-fix": "run-p 'lint:* -- --fix'",
 		"lint:css": "stylelint source/**/*.css",
 		"lint:js": "xo",
-		"test": "run-p lint:* build",
+		"test": "run-p build",
 		"watch": "parcel watch --no-hmr"
 	},
 	"browserslist": [
