@@ -1,4 +1,5 @@
 import axios from "axios";
+import optionsStorage from "./options-storage.js";
 let username;
 let isChrome = false;
 
@@ -97,14 +98,13 @@ function isOverAMonthAgo(date) {
 }
 
 async function submit(submissions, isAll) {
-	await axios.post(
-		"https://byu-cpc-backend-tqxfeezgfa-uw.a.run.app/kattis_submit",
-		{
-			username,
-			submissions,
-			isAll,
-		},
-	);
+	const options = await optionsStorage.getAll();
+	const backend_url = options.backend_url;
+	await axios.post(backend_url, {
+		username,
+		submissions,
+		isAll,
+	});
 }
 async function setSyncing() {
 	const badge = document.createElement("div");
