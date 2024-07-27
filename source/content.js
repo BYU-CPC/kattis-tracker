@@ -47,6 +47,7 @@ async function timeout(ms) {
 }
 
 async function getSubmissionPages(username, getAllPages) {
+	if (getAllPages) setSyncing();
 	const output = [];
 	let page = 0;
 	while (true) {
@@ -88,10 +89,11 @@ async function getSubmissionPages(username, getAllPages) {
 			break;
 		}
 	}
+	if (getAllPages) unsetSyncing();
 	return output;
 }
-function isOverADayAgo(date) {
-	return date < Date.now() - 1000 * 60 * 60 * 24;
+function isOverAMonthAgo(date) {
+	return date < Date.now() - 1000 * 60 * 60 * 24 * 30;
 }
 
 async function submit(submissions, isAll) {
@@ -104,7 +106,7 @@ async function submit(submissions, isAll) {
 		},
 	);
 }
-async function setSubmitting() {
+async function setSyncing() {
 	const badge = document.createElement("div");
 	badge.id = "syncingBadge";
 	badge.classList.add("shrink");
@@ -115,7 +117,7 @@ async function setSubmitting() {
 	newBadge.classList.remove("shrink");
 }
 
-async function unsetSubmitting() {
+async function unsetSyncing() {
 	const badge = document.getElementById("syncingBadge");
 	badge.classList.add("shrink");
 	await timeout(500);
@@ -125,23 +127,21 @@ async function unsetSubmitting() {
 }
 
 async function syncAndSubmit(username) {
-	setSubmitting();
-	const initialSync = await get("initial-sync");
 	const lastFullSync = await get("last-full-sync");
-	const getAllPages =
-		!initialSync || !lastFullSync || isOverADayAgo(lastFullSync);
+	const lastId = await get("last-id");
+	const getAllPages = !lastFullSync || isOverAMonthAgo(lastFullSync);
 	const submissions = await getSubmissionPages(username, getAllPages);
+	if (submissions[0]?.submissionId === lastId) return;
 	await submit(submissions, getAllPages);
 	if (getAllPages) {
-		await set("initial-sync", true);
 		await set("last-full-sync", Date.now());
+		await set("last-id", submissions[0]?.submissionId);
 	}
-	unsetSubmitting();
 }
 
 async function main() {
 	username = getUsername();
-	if (!username) {
+	if (!username || !window.location.href.includes("submission")) {
 		return;
 	}
 	await syncAndSubmit(username);
