@@ -1,6 +1,6 @@
 {
 	"name": "Kattis Tracker",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Kattis Submission Tracker for BYU CPC",
 	"homepage_url": "https://github.com/joshbtay/kattis-extension",
 	"manifest_version": 3,
@@ -10,7 +10,7 @@
 		}
 	},
 	"icons": {
-		"128": "icon.png"
+		"120": "icon.png"
 	},
 	"permissions": ["storage"],
 	"host_permissions": ["https://open.kattis.com/*"],
@@ -21,5 +21,13 @@
 			"css": ["content.css"],
 			"run_at": "document_end"
 		}
-	]
+	],
+	"options_ui": {
+		"page": "options.html"
+	},
+	"background": {
+		"service_worker": "background.js",
+		"type": "module",
+		"scripts": ["background.js"]
+	}
 }
