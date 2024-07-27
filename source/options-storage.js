@@ -1,16 +1,10 @@
-import OptionsSync from 'webext-options-sync';
+import OptionsSync from "webext-options-sync";
 
 const optionsStorage = new OptionsSync({
 	defaults: {
-		colorRed: 244,
-		colorGreen: 67,
-		colorBlue: 54,
-		text: 'Set a text!',
+		backend_url:
+			"https://byu-cpc-backend-tqxfeezgfa-uw.a.run.app/kattis_submit",
 	},
-	migrations: [
-		OptionsSync.migrations.removeUnused,
-	],
-	logging: true,
 });
 
 export default optionsStorage;

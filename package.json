@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "parcel build",
+		"build": "parcel build --no-cache --no-optimize --no-scope-hoist",
 		"lint": "run-p lint:*",
 		"lint-fix": "run-p 'lint:* -- --fix'",
 		"lint:css": "stylelint source/**/*.css",
@@ -26,15 +26,16 @@
 		"extends": [
 			"stylelint-config-xo"
 		],
-		"rules": {
-		}
+		"rules": {}
 	},
 	"dependencies": {
+		"axios": "^1.7.2",
 		"webext-base-css": "^1.4.4",
 		"webext-options-sync": "^4.2.3"
 	},
 	"devDependencies": {
 		"@parcel/config-webextension": "^2.12.1-canary.3290",
+		"buffer": "^6.0.3",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.0.0-canary.1665",
 		"stylelint": "^16.6.1",
@@ -52,7 +53,7 @@
 		"sourceDir": "distribution",
 		"run": {
 			"startUrl": [
-				"https://github.com/fregante/browser-extension-template"
+				"https://open.kattis.com"
 			]
 		}
 	}
