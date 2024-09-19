@@ -13,10 +13,10 @@
 		"120": "icon.png"
 	},
 	"permissions": ["storage"],
-	"host_permissions": ["https://open.kattis.com/*"],
+	"host_permissions": ["https://*.kattis.com/*"],
 	"content_scripts": [
 		{
-			"matches": ["https://open.kattis.com/*"],
+			"matches": ["https://*.kattis.com/*"],
 			"js": ["content.js"],
 			"css": ["content.css"],
 			"run_at": "document_end"
