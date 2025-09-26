@@ -1,7 +1,7 @@
 {
 	"name": "Kattis Tracker",
-	"version": "0.0.2",
-	"description": "Kattis Submission Tracker for BYU CPC",
+	"version": "0.0.3",
+	"description": "Kattis Submission Tracker",
 	"homepage_url": "https://github.com/joshbtay/kattis-extension",
 	"manifest_version": 3,
 	"browser_specific_settings": {
