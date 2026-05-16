@@ -55,7 +55,8 @@
 	"targets": {
 		"default": {
 			"source": "source/manifest.json",
-			"distDir": "./distribution"
+			"distDir": "./distribution",
+			"includeNodeModules": true
 		}
 	},
 	"webExt": {

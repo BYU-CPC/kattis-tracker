@@ -34,9 +34,38 @@ npm run watch
 
 The built extension is written to `distribution/`.
 
-## Load the extension locally
+## Run the extension locally
 
-### Chrome / Chromium
+Using [`web-ext`](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/) is recommended during development. It starts a dedicated, temporary browser profile with the extension installed, so you do not have to load it into your normal Chrome or Firefox profile.
+
+1. Install dependencies and build the extension:
+
+	```sh
+	npm ci
+	npm run build
+	```
+
+2. In another terminal, run one of:
+
+	```sh
+	# Chrome / Chromium
+	npx web-ext run --source-dir distribution --target chromium --start-url https://open.kattis.com
+
+	# Firefox
+	npx web-ext run --source-dir distribution --target firefox-desktop --start-url https://open.kattis.com
+	```
+
+3. For iterative development, keep Parcel rebuilding in one terminal and rerun or leave `web-ext` running in another:
+
+	```sh
+	npm run watch
+	```
+
+The same `sourceDir` and `startUrl` defaults are also recorded in `package.json` under `webExt`.
+
+### Load manually instead
+
+#### Chrome / Chromium
 
 1. Run `npm run build` or keep `npm run watch` running.
 2. Open `chrome://extensions`.
@@ -44,7 +73,7 @@ The built extension is written to `distribution/`.
 4. Click **Load unpacked**.
 5. Select the `distribution/` directory.
 
-### Firefox
+#### Firefox
 
 1. Run `npm run build` or keep `npm run watch` running.
 2. Open `about:debugging#/runtime/this-firefox`.
