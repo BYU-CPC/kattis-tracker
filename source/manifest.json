@@ -6,7 +6,10 @@
 	"manifest_version": 3,
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "joshbtay@gmail.com"
+			"id": "joshbtay@gmail.com",
+			"data_collection_permissions": {
+				"required": ["personallyIdentifyingInfo", "websiteActivity", "websiteContent"]
+			}
 		}
 	},
 	"icons": {
@@ -24,9 +27,5 @@
 	],
 	"options_ui": {
 		"page": "options.html"
-	},
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
 	}
 }

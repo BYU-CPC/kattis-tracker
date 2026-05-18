@@ -1,13 +1,12 @@
 # Kattis Tracker
 
-Kattis Tracker is a Manifest V3 browser extension that watches accepted Kattis submissions and sends them to a configurable backend endpoint.
+Kattis Tracker is a Manifest V3 browser extension that watches accepted Kattis submissions from its content script and sends them to a configurable backend endpoint.
 
 The extension runs on `https://*.kattis.com/*`, detects the signed-in Kattis username, reads accepted submissions from the user's submissions tab, and submits newly discovered accepted submissions to the backend.
 
 ## Features
 
 - Cross-browser WebExtension built with Parcel.
-- Manifest V3 extension with a module service worker.
 - Tracks accepted Kattis submissions per user.
 - Performs a full sync periodically and lightweight incremental syncs otherwise.
 - Configurable backend URL from the extension options page.
