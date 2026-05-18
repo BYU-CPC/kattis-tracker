@@ -1,0 +1,644 @@
+<html class="" lang="en" style="--main-padding-y: 73px; --top_bar-height: 50px;"><head><style id="ace_highlight">.ace_static_highlight {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Source Code Pro', 'source-code-pro', 'Droid Sans Mono', monospace;
+    font-size: 12px;
+    white-space: pre-wrap
+}
+
+.ace_static_highlight .ace_gutter {
+    width: 2em;
+    text-align: right;
+    padding: 0 3px 0 0;
+    margin-right: 3px;
+    contain: none;
+}
+
+.ace_static_highlight.ace_show_gutter .ace_line {
+    padding-left: 2.6em;
+}
+
+.ace_static_highlight .ace_line { position: relative; }
+
+.ace_static_highlight .ace_gutter-cell {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+.ace_static_highlight .ace_gutter-cell:before {
+    content: counter(ace_line, decimal);
+    counter-increment: ace_line;
+}
+.ace_static_highlight {
+    counter-reset: ace_line;
+}
+.ace-tomorrow-night .ace_gutter {
+  background: #25282c;
+  color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_print-margin {
+  width: 1px;
+  background: #25282c
+}
+
+.ace-tomorrow-night {
+  background-color: #1D1F21;
+  color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_cursor {
+  color: #AEAFAD
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_selection {
+  background: #373B41
+}
+
+.ace-tomorrow-night.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #1D1F21;
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_step {
+  background: rgb(102, 82, 0)
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #4B4E55
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_active-line {
+  background: #282A2E
+}
+
+.ace-tomorrow-night .ace_gutter-active-line {
+  background-color: #282A2E
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_selected-word {
+  border: 1px solid #373B41
+}
+
+.ace-tomorrow-night .ace_invisible {
+  color: #4B4E55
+}
+
+.ace-tomorrow-night .ace_keyword,
+.ace-tomorrow-night .ace_meta,
+.ace-tomorrow-night .ace_storage,
+.ace-tomorrow-night .ace_storage.ace_type,
+.ace-tomorrow-night .ace_support.ace_type {
+  color: #B294BB
+}
+
+.ace-tomorrow-night .ace_keyword.ace_operator {
+  color: #8ABEB7
+}
+
+.ace-tomorrow-night .ace_constant.ace_character,
+.ace-tomorrow-night .ace_constant.ace_language,
+.ace-tomorrow-night .ace_constant.ace_numeric,
+.ace-tomorrow-night .ace_keyword.ace_other.ace_unit,
+.ace-tomorrow-night .ace_support.ace_constant,
+.ace-tomorrow-night .ace_variable.ace_parameter {
+  color: #DE935F
+}
+
+.ace-tomorrow-night .ace_constant.ace_other {
+  color: #CED1CF
+}
+
+.ace-tomorrow-night .ace_invalid {
+  color: #CED2CF;
+  background-color: #DF5F5F
+}
+
+.ace-tomorrow-night .ace_invalid.ace_deprecated {
+  color: #CED2CF;
+  background-color: #B798BF
+}
+
+.ace-tomorrow-night .ace_fold {
+  background-color: #81A2BE;
+  border-color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_entity.ace_name.ace_function,
+.ace-tomorrow-night .ace_support.ace_function,
+.ace-tomorrow-night .ace_variable {
+  color: #81A2BE
+}
+
+.ace-tomorrow-night .ace_support.ace_class,
+.ace-tomorrow-night .ace_support.ace_type {
+  color: #F0C674
+}
+
+.ace-tomorrow-night .ace_heading,
+.ace-tomorrow-night .ace_markup.ace_heading,
+.ace-tomorrow-night .ace_string {
+  color: #B5BD68
+}
+
+.ace-tomorrow-night .ace_entity.ace_name.ace_tag,
+.ace-tomorrow-night .ace_entity.ace_other.ace_attribute-name,
+.ace-tomorrow-night .ace_meta.ace_tag,
+.ace-tomorrow-night .ace_string.ace_regexp,
+.ace-tomorrow-night .ace_variable {
+  color: #CC6666
+}
+
+.ace-tomorrow-night .ace_comment {
+  color: #969896
+}
+
+.ace-tomorrow-night .ace_indent-guide {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYHB3d/8PAAOIAdULw8qMAAAAAElFTkSuQmCC) right repeat-y
+}
+
+.ace-tomorrow-night .ace_indent-guide-active {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQIW2PQ1dX9zzBz5sz/ABCcBFFentLlAAAAAElFTkSuQmCC) right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace_highlight */</style>
+    <!-- Load sentry as early as possible -->
+            <script nonce="" src="https://js.sentry-cdn.com/1ad5e9767ad243d396a93ef40135e743.min.js" crossorigin="anonymous" data-lazy="no"></script>
+
+    <script nonce="" type="module">
+        Sentry.onLoad(function() {
+            Sentry.init({
+                dsn: "https://1ad5e9767ad243d396a93ef40135e743:0f66eac85d88443baa349f5bc2497f28@sentry.io/271015",
+                release: "928a0f0d57f51a63ecafed2d37fa2c422f3ec122",
+                environment: "production",
+                whitelistUrls: [
+                    /https?:\/\/open\.kattis\.com/                 ],
+                ignoreErrors: [
+                    "Non-Error exception captured",                     "Non-Error promise rejection captured",                    'ResizeObserver loop limit exceeded',                    'Can\'t find variable: zaloJSV2'                ],
+                denyUrls: ['/static\.cloudflareinsights\.com/'],                 autoSessionTracking: false,
+                integrations: [                    new Sentry.BrowserTracing(),
+                ],
+                tracesSampleRate: 0,
+                profilesSampleRate: 1.0,
+                replaysSessionSampleRate: 0,                 replaysOnErrorSampleRate: 0,                 tracePropagationTargets: ["localhost", /https?:\/\/open\.kattis\.com/],             });
+                        Sentry.setUser({
+                username: "joshbtay",
+                                email: "joshbtay@gmail.com",
+                            })
+                        Sentry.configureScope((scope) => scope.setTransactionName("submissions_view"));         })
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submission 17584054 – Kattis, Kattis</title>
+
+    <!-- Jquery and Jquery-ui -->
+    <link href="/assets/af09957458029929306917fcfc6e05c3/jquery-ui-dist/jquery-ui.theme.min.css" rel="stylesheet">
+    <script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/jquery/dist/jquery.min.js"></script>
+    <script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/jquery-ui-dist/jquery-ui.min.js"></script>
+
+    <!-- Timezone Cookie -->
+    <script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/modules/timezone.js"></script>
+
+    <!-- Fonts/Icons -->
+    <link href="/assets/af09957458029929306917fcfc6e05c3/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/300.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/300-italic.css" rel="stylesheet">
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/400.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/400-italic.css" rel="stylesheet">
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/700.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/merriweather/700-italic.css" rel="stylesheet">
+                <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/300.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/300-italic.css" rel="stylesheet">
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/400.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/400-italic.css" rel="stylesheet">
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/500.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/500-italic.css" rel="stylesheet">
+            <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/700.css" rel="stylesheet">
+        <link href="/assets/af09957458029929306917fcfc6e05c3/@fontsource/ubuntu/700-italic.css" rel="stylesheet">
+
+    <!-- DateRangePicker CSS -->
+    <link href="/assets/af09957458029929306917fcfc6e05c3/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Editable and Select2 -->
+    <link href="/assets/af09957458029929306917fcfc6e05c3/select2/dist/css/select2.css" rel="stylesheet">
+
+            <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-128.png" sizes="128x128">
+        <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+        <meta name="application-name" content="Kattis, Kattis">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="/images/favicon/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="/images/favicon/mstile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/images/favicon/mstile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="/images/favicon/mstile-310x310.png">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="/css/5c201b1cc07aece6b2d5377eae27226a/style.css">
+    <style type="text/css">           .logo {
+         background-color: ;
+     }
+          :root {
+                      --branding-border: linear-gradient(rgb(240,176,52), rgb(240,176,52));
+              }
+
+          div.page-content.clearfix.above-everything.alert.alert-danger { color: #31708f; background: #d9edf7; border-color: #bce8f1; }
+div.page-content.clearfix.above-everything.alert.alert-danger div.main-content { padding-bottom: 0; }
+
+         </style>
+
+    <script nonce="" type="text/javascript">
+        window.page_loaded_at = new Date();
+        jQuery.noConflict();
+    </script>
+
+
+<script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script><script src="https://open.kattis.com/assets/af09957458029929306917fcfc6e05c3/ace-builds/src-min-noconflict/ext-static_highlight.js"></script><script src="https://open.kattis.com/assets/af09957458029929306917fcfc6e05c3/ace-builds/src-min-noconflict/theme-tomorrow.js"></script><script src="https://open.kattis.com/assets/af09957458029929306917fcfc6e05c3/ace-builds/src-min-noconflict/theme-tomorrow_night.js"></script><script src="https://open.kattis.com/assets/af09957458029929306917fcfc6e05c3/ace-builds/src-min-noconflict/mode-python.js"></script></head>
+
+<body class=" l-body_grid">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="l-page_header">
+    <div class="page_header-arrow_expand_collapse">
+        <i class="page_header-arrow_expand_collapse-arrow"></i>
+    </div>
+    <div class="page_header-wrapper">
+        <div class="logo-container">
+            <a class="logo-link" href="/" title="Kattis">
+                <img class="logo" src="/images/site-logo?v=0a3f6018aacf449381741e45cf0ff6ba" alt="Kattis logo">
+            </a>
+            <h4 class="logo-container-text">Kattis</h4>
+            <button class="menu_mobile_link">
+                <i class="fas fa-bars menu_mobile_link_icon"></i>
+            </button>
+            <script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/pages/master/nav.js"></script>
+        </div>
+        <div class="branding_border"></div>
+        <div class="page_header-content">
+            <nav>
+                <ul class="main_menu">
+                                                                    <li>
+                            <a href="/problems" class="main_menu-item main_menu-item_link  " title="Problems">
+                                                                    <i class="fas fa-puzzle-piece main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Problems</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/contests" class="main_menu-item main_menu-item_link  " title="Contests">
+                                                                    <i class="fas fa-award main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Contests</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/challenge" class="main_menu-item main_menu-item_link  " title="Challenge">
+                                                                    <i class="fas fa-star main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name beta_label">Challenge</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/ranklist" class="main_menu-item main_menu-item_link  " title="Ranklists">
+                                                                    <i class="fas fa-trophy main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Ranklists</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/jobs" class="main_menu-item main_menu-item_link  " title="Jobs">
+                                                                    <i class="fas fa-suitcase main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Jobs</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/languages" class="main_menu-item main_menu-item_link  " title="Languages">
+                                                                    <i class="fas fa-code main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Languages</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="/info" class="main_menu-item main_menu-item_link  " title="Info">
+                                                                    <i class="fas fa-info main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Info</span>
+                                                            </a>
+                        </li>
+                                                                    <li>
+                            <a href="https://support.kattis.com" class="main_menu-item main_menu-item_link  " title="Help">
+                                                                    <i class="fas fa-question main_menu-item_icon"></i>
+                                                                <span class="main_menu-item_name ">Help</span>
+                                                            </a>
+                        </li>
+                                    </ul>
+            </nav>
+                            <div class="header_item_margin search-lower">
+                    <label for="search_input" class="search-label search-label-right">Search</label>
+                    <form id="search_form" method="GET" action="/search" class="search">
+                                                    <img src="/images/site/header/logo-empty.png?0bb770=" alt="Kattis Cat" class="search-mascot">
+                                                <input id="search_input" type="search" name="q" class="search-input" placeholder="Search Kattis">
+                        <i id="search_submit" class="fas fa-search search-icon"></i>
+                    </form>
+                </div>
+                    </div>
+    </div>
+</header>
+
+    <div class="l-main_area">
+
+
+
+        <main class="flex flex-col grow content_padding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="top_bar ">
+    <script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/pages/master/top_bar.js"></script>
+    <div class="branding_border"></div>
+            <div class="top_bar-content-wrapper">
+            <div class="top_bar-section top_bar-section-large">
+                <div class="breadcrumb top_bar-item">
+                                                                                                        <span class="breadcrumb-current">
+                                                    Submission 17584054
+                                            </span>
+                </div>
+
+                            </div>
+
+            <div class="top_bar-section collapsible-menu-group-right top_bar-section-small items-center">
+
+
+
+                                                            <div class="top_bar-item top_bar-item-right top_bar-item-button top_bar-item-button-user">
+                            <div class="top_bar-button">
+                                <a class="whitespace-nowrap" href="/supporter">
+                                                                            Support Kattis                                                                    </a>
+                            </div>
+                        </div>
+                                        <div class="top_bar-item top_bar-item-right top_bar-item-button top_bar-item-button-user">
+                        <div class="collapsible-menu-container">
+                            <div class="top_bar-button whitespace-nowrap" data-open-collapsible-menu-id="top_user_menu">
+                                Josh Taylor
+                                <i class="fas fa-chevron-down top_bar-button-chevron_down"></i>
+                                <i class="fas fa-chevron-up top_bar-button-chevron_up"></i>
+                            </div>
+                            <div id="top_user_menu" class="collapsible-menu">
+                                <span class="collapsible-menu-arrow"></span>
+                                <div class="collapsible-menu-content">
+                                    <a href="/users/joshbtay" class="image_info static_link"><div class="image_info-image-container"><img src="/images/users/joshbtay?v=4fbf088fe5bd468fdf64a76b4567455e" alt="Josh Taylor" class="image_info-image image_info-image-strip image_info-image-rounded " "=""></div><div class="image_info-text-container"><span class="image_info-text-main image_info-text-main-user">Josh Taylor</span><span class="image_info-text-sub"><ul class="image_info-list-sub"><li>Score: 1956.1</li><li>Rank: 302</li></ul></span></div></a>
+                                    <div class="logout-container mt-4">
+                                        <a href="/logout" class="button button-basic button-block whitespace-nowrap">Log out<i class="fas fa-sign-out-alt button-icon-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+<script nonce="" defer="" src="/assets/af09957458029929306917fcfc6e05c3/ace-builds/src-min-noconflict/ace.js"></script>
+<script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/modules/highlight.js"></script>
+<script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/dompurify/dist/purify.min.js"></script>
+<script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/pages/submissions/view.js"></script>
+<script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/modules/tooltip.js"></script>
+<script nonce="" type="module">
+    import initializeCopyButtons from "/js/e5c31ed9d7fd95744071a03f9397ed4b/modules/attach-copy-buttons.js";
+    jQuery(document).ready(function($) {
+        initializeCopyButtons("Copied to clipboard!");
+    });
+</script>
+<span id="refresh-data" data-poll-initial="">
+
+<div class="l-report_grid">
+    <div class="l-strip_list">
+
+        <div class="strip">
+            <div class="strip-item">
+                <div>
+                    <h1>Submission 17584054</h1>
+                    <div class="divider-separated-list">
+                                                                    </div>
+                </div>
+                <div class="submission_download_edit">
+                                        <a id="edit-and-resubmit" href="/problems/eko?editresubmit=17584054" class="button button-primary edit_submission">
+                        <i class="fas fa-edit button-icon-left"></i>Edit and resubmit                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="strip strip-item-plain">
+            <div class="table-container">
+                <div class="table-wrapper">
+                    <table id="judge_table" class="table2 report_grid-problems_table double-rows">
+                        <thead><tr><th> </th> <th>Date</th> <th>Problem</th> <th>Judgement</th> <th>Runtime</th> <th>Language</th> <th>Test cases</th> </tr></thead>
+                        <tbody>
+                            <tr data-submission-id="17584054"><td data-type="plagiarism" style=""></td><td data-type="time" style="">2025-06-20 19:54:09</td><td data-type="problem" style=""><a href="/problems/eko">Eko</a></td><td data-type="status" style=""><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="">0.41&nbsp;s</td><td data-type="lang" style="">Python 3</td><td data-type="testcases" style=""><div class="horizontal_item">17/17</div></td></tr><tr class="testcases-row"><td></td><td colspan="6"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="submission-tabs" class="l-strip_list-flex" data-default-tab="submitted-files-tab" data-current-tab="submitted-files-tab">
+            <div class="strip-item-plain problem-view-tab-nav-container"><nav class="tab-nav problem-view-tab-nav" data-mobile-select-classes="is-hidden@md tab-select-js" data-active-page="submitted-files-tab"><a id="submitted-files-tab-link" class="tab-nav-item tab-nav-js active" title="Submitted files" data-tab-id-to-open="submitted-files-tab">Submitted files</a><a id="submission-history-tab-link" class="tab-nav-item tab-nav-js " title="Submission history" data-tab-id-to-open="submission-history-tab">Submission history</a></nav></div>
+                            <div id="submitted-files-tab" class="l-strip_list-flex " data-tabs-container="#submission-tabs"><div class="strip strip-item-tight"><div class="strip-row"><h2>Files submitted</h2> </div><span class="mt-2"><label>Mainfile:</label> <code>eko.py</code></span><div class="file_source-content"><div class="file_source-content-test" data-filename="eko.py"><div class="file_source-content-file"><h3 id="eko.py">eko.py</h3><span class="flex gap-4"><a href="/submissions/17584054/source/eko.py" target="_blank"><button class="button button-basic button-small"><i class="fas fa-download button-icon-left"></i> Download eko.py</button></a></span></div><div class="source-highlight w-full" data-language="python"><div class="ace-tomorrow-night"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_identifier">r</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">lambda</span><span class="ace_punctuation">:</span> <span class="ace_support ace_function">list</span><span class="ace_paren ace_lparen">(</span><span class="ace_support ace_function">map</span><span class="ace_paren ace_lparen">(</span><span class="ace_support ace_function">int</span><span class="ace_punctuation">,</span><span class="ace_support ace_function">input</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation">.</span><span class="ace_function ace_support">split</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)))</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_identifier">n</span><span class="ace_punctuation">,</span><span class="ace_identifier">m</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">r</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_identifier">t</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">r</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_identifier">h</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1000000001</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_keyword">def</span> <span class="ace_entity ace_name ace_function">test</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">med</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation">:</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_identifier">total</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_keyword">for</span> <span class="ace_identifier">tree</span> <span class="ace_keyword">in</span> <span class="ace_identifier">t</span><span class="ace_punctuation">:</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">total</span> <span class="ace_keyword ace_operator">+=</span> <span class="ace_support ace_function">max</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">0</span><span class="ace_punctuation">,</span> <span class="ace_identifier">tree</span> <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">med</span><span class="ace_paren ace_rparen">)</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">total</span> <span class="ace_keyword ace_operator">&gt;=</span> <span class="ace_identifier">m</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_keyword">while</span> <span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">&lt;</span> <span class="ace_identifier">h</span><span class="ace_punctuation">:</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_identifier">med</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_paren ace_lparen">(</span><span class="ace_identifier">l</span><span class="ace_keyword ace_operator">+</span><span class="ace_identifier">h</span><span class="ace_paren ace_rparen">)</span> <span class="ace_keyword ace_operator">//</span> <span class="ace_constant ace_numeric">2</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_keyword">if</span> <span class="ace_identifier">test</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">med</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation">:</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">med</span> <span class="ace_keyword ace_operator">+</span> <span class="ace_constant ace_numeric">1</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>    <span class="ace_keyword">else</span><span class="ace_punctuation">:</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_indent-guide">    </span>    <span class="ace_identifier">h</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">med</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span><span class="ace_keyword">print</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">l</span><span class="ace_keyword ace_operator">-</span><span class="ace_constant ace_numeric">1</span><span class="ace_paren ace_rparen">)</span>
+<div class="inline-comments-container"></div></div><div class="ace_line"><span class="ace_gutter ace_gutter-cell"></span>
+<div class="inline-comments-container"></div></div></div></div></div></div><div class="file-comments-container"></div></div>
+
+
+                <template id="file-comment-template"><div class="file-comment"><hr class="comment-divider"><span class="comment-header"><span class="flex gap-3"><h4 class="comment-title"></h4><span class="comment-edited-label" data-edited-label="(edited)" data-edited-title="edited at "></span><span class="comment-actions"><button class="button button-tightsmall button-inverted button-inline edit-comment-btn"><i class="fas fa-edit"></i></button><button class="button button-tightsmall button-inverted button-inline is-button-danger delete-comment-btn" data-fail-msg="Failed deleting comment"><i class="fas fa-trash-alt"></i></button></span></span><span class="comment-timestamp"></span></span><div class="comment-content"></div><div class="edit-comment"><textarea class="comment-content"></textarea><span class="comment-footer"><button class="button button-tightsmall button-primary edit-comment-submit" data-fail-msg="Failed editing comment">Edit Comment</button><button class="button button-tightsmall button-secondary edit-comment-cancel">Cancel</button></span></div></div></template>
+                <template id="inline-comment-template"><div class="inline-comment"><span class="comment-header"><span class="flex gap-3"><h4 class="comment-title"></h4><span class="comment-edited-label" data-edited-label="(edited)" data-edited-title="edited at "></span><span class="comment-actions"><button class="button button-tightsmall button-inverted button-inline edit-comment-btn"><i class="fas fa-edit"></i></button><button class="button button-tightsmall button-inverted button-inline is-button-danger delete-comment-btn" data-fail-msg="Failed deleting comment"><i class="fas fa-trash-alt"></i></button></span></span><span class="comment-timestamp"></span></span><div class="comment-content"></div><div class="edit-comment"><textarea class="comment-content"></textarea><span class="comment-footer"><button class="button button-tightsmall button-primary edit-comment-submit" data-fail-msg="Failed editing comment">Edit Comment</button><button class="button button-tightsmall button-secondary edit-comment-cancel">Cancel</button></span></div></div></template>
+                <template id="new-file-comment-template"><hr class="comment-divider"><button class="button button-tightsmall button-secondary add-comment-btn">New Comment</button><div class="file-comment new-comment"><span class="comment-header"><h4 class="comment-title">New Comment</h4></span><textarea class="comment-content"></textarea><span class="comment-footer"><button class="button button-tightsmall button-secondary new-comment-cancel">Cancel</button></span></div></template>
+                <template id="new-inline-comment-template"><div class="inline-comment new-comment"><span class="comment-header"><h4 class="comment-title">New Comment</h4></span><textarea class="comment-content"></textarea><span class="comment-footer"><button class="button button-tightsmall button-secondary new-comment-cancel">Cancel</button></span></div></template>
+
+                <template id="submit-comment-template">
+                    <div>
+                        <hr class="comment-divider">
+                        <button class="button button-tightsmall button-primary submit-comment-btn" data-fail-msg="Failed adding comment">Submit Comments</button>
+                    </div>
+                </template>
+
+                <script nonce="" type="text/json" id="submission-comments" data-submission-id="17584054" data-csrf-token="3202226309965135547956043642942719758916">
+                    []
+                </script>
+                    </div>
+    </div>
+
+
+    <div id="submission-history-tab" class="l-strip_list-flex is-hidden" data-tabs-container="#submission-tabs">
+        <div class="strip strip-item strip-item-tight">
+
+            <h2 class="mb-2 ">Submission history (at most 10 last submissions)</h2>
+
+    <div class="table-wrapper ">
+
+
+
+        <table class="table2 report_grid-problems_table double-rows" id="submission_history_table">
+            <thead><tr><th> </th> <th>Date</th> <th>Judgement</th> <th>Runtime</th> <th>Language</th> <th>Diff</th> <th>Test cases</th> <th> </th> </tr></thead>
+
+
+
+
+                <tbody>
+                                            <tr data-submission-id="17584054"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2025-06-20 19:54:09</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.41&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><em>Current submission</em></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/17584054" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="13996028"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2024-08-09 13:05:06</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.46&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=13996028&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/13996028" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="13971981"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2024-08-02 08:54:17</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.47&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=13971981&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/13971981" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="12957646"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2024-02-15 19:41:34</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.47&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=12957646&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/12957646" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="12957586"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2024-02-15 19:36:35</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.47&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=12957586&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/12957586" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="12957581"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2024-02-15 19:35:48</td><td data-type="status" style="min-width:160px"><div class="status is-status-rejected"><i class="fas fa-times status-icon is-rejected"></i><span>Wrong Answer</span></div></td><td data-type="cpu" style="min-width:80px">0.00&nbsp;s</td><td data-type="lang" style="min-width:110px">C++</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=12957581&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">0/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/12957581" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-times status-icon is-rejected" title="Test case 1/17: Wrong Answer"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i></div></td></tr>
+                                            <tr data-submission-id="7418054"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2021-07-01 08:32:29</td><td data-type="status" style="min-width:160px"><div class="status is-status-accepted"><i class="fas fa-check status-icon is-accepted"></i><span>Accepted</span></div></td><td data-type="cpu" style="min-width:80px">0.45&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=7418054&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">17/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/7418054" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 16/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 17/17: Accepted"></i></div></td></tr>
+                                            <tr data-submission-id="7417976"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2021-07-01 08:12:13</td><td data-type="status" style="min-width:160px"><div class="status is-status-rejected"><i class="fas fa-times status-icon is-rejected"></i><span>Wrong Answer</span></div></td><td data-type="cpu" style="min-width:80px">0.45&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=7417976&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">15/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/7417976" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 13/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 14/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 15/17: Accepted"></i><i class="fas fa-times status-icon is-rejected" title="Test case 16/17: Wrong Answer"></i><i class="status-icon is-empty" title="Test case not checked"></i></div></td></tr>
+                                            <tr data-submission-id="7417894"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2021-07-01 07:34:54</td><td data-type="status" style="min-width:160px"><div class="status is-status-rejected"><i class="fas fa-times status-icon is-rejected"></i><span>Wrong Answer</span></div></td><td data-type="cpu" style="min-width:80px">0.40&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=7417894&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">12/17</div></td><td data-type="actions" style="min-width:130px"><a href="/submissions/7417894" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 4/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 5/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 6/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 7/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 8/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 9/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 10/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 11/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 12/17: Accepted"></i><i class="fas fa-times status-icon is-rejected" title="Test case 13/17: Wrong Answer"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i></div></td></tr>
+                                            <tr data-submission-id="7417859"><td data-type="plagiarism" style="min-width:0px"></td><td data-type="time" style="min-width:100px">2021-07-01 07:21:57</td><td data-type="status" style="min-width:160px"><div class="status is-status-rejected"><i class="fas fa-times status-icon is-rejected"></i><span>Wrong Answer</span></div></td><td data-type="cpu" style="min-width:80px">0.06&nbsp;s</td><td data-type="lang" style="min-width:110px">Python 3</td><td data-type="diffsub" style=""><a href="/diff/submissions?id1=17584054&amp;id2=7417859&amp;mode=history">Diff with this submission</a></td><td data-type="testcases" style="min-width:80px"><div class="horizontal_item">3/17</div></td><td data-type="actions" style="min-width:130px"><a href="/contests/up95hv/submissions/7417859" class="button button-basic button-tightsmall">View Details</a></td></tr><tr class="testcases-row"><td></td><td colspan="7"><div class="status testcase testcase-row"><i class="fas fa-check status-icon is-accepted" title="Test case 1/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 2/17: Accepted"></i><i class="fas fa-check status-icon is-accepted" title="Test case 3/17: Accepted"></i><i class="fas fa-times status-icon is-rejected" title="Test case 4/17: Wrong Answer"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i><i class="status-icon is-empty" title="Test case not checked"></i></div></td></tr>
+                                    </tbody>
+                    </table>
+
+        <script nonce="" type="module" src="/js/e5c31ed9d7fd95744071a03f9397ed4b/modules/table.js"></script>    </div>
+
+        </div>
+    </div>
+
+                    </div>
+    </div>
+</div>
+
+
+        </span></main>
+
+
+
+
+
+    <footer class="l-footer ">
+        <span class="text-center text-sm divider-separated-list">
+            <a href="/contact">Contact</a>
+            <a href="https://status.kattis.com">System Status</a>
+            <a rel="terms-of-service" href="/contracts/current/tos">Terms of Service</a>
+            <a rel="privacy-policy" href="/contracts/current/privacy_policy">Privacy Policy</a>
+        </span>
+    </footer>
+
+    </div>
+
+
+<script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/moment/min/moment.min.js"></script>
+<script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script nonce="" src="/assets/af09957458029929306917fcfc6e05c3/select2/dist/js/select2.full.min.js"></script>
+
+
+
+        <script defer="" nonce="" src="https://status.kattis.com/embed/script.js"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" nonce="" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;6651308a007d4d459b12876077322bfb&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<iframe src="https://1v5nt68l4ppj.statuspage.io/embed/frame" title="Kattis Status" aria-hidden="true" style="position: fixed; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; box-shadow: rgba(9, 20, 66, 0.25) 0px 20px 32px -8px; z-index: 9999; transition: left 1s, bottom 1s, right 1s; height: 115px; width: 320px; left: -9999px; right: auto; bottom: 60px;" tabindex="-1"></iframe></body></html>

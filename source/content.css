@@ -1,133 +1,108 @@
-#syncing-badge {
+#kattis-tracker-overlay {
 	position: fixed;
-	top: 20px;
-	right: 20px;
+	right: 0;
+	bottom: 20px;
 	display: flex;
+	gap: 10px;
 	align-items: center;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: #2227;
+	box-sizing: border-box;
+	max-width: 320px;
+	padding: 8px 10px;
+	border-radius: 6px 0 0 6px;
+	background-color: #222c;
 	color: #fff;
 	font-family: Arial, sans-serif;
-	font-size: 25px;
-	opacity: 100%;
-	transform: scale(1);
+	font-size: 14px;
 	backdrop-filter: blur(20px);
-	transition: opacity 0.5s ease, transform 0.5s ease;
+	transition: max-width 0.2s ease, padding 0.2s ease, gap 0.2s ease;
 	z-index: 1000;
 }
 
-#syncing-badge.shrink {
-	opacity: 0%;
-	transform: scale(0.5);
+.kattis-tracker-status {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	min-width: 0;
 }
 
-.lds-roller {
-	position: relative;
+.kattis-tracker-status-indicator {
 	display: inline-block;
-	width: 30px;
-	height: 30px;
-	box-sizing: border-box;
-	margin-left: 10px;
-	color: #fff;
-}
-
-.lds-roller div {
-	box-sizing: border-box;
-	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-	transform-origin: 15px 15px;
-}
-
-.lds-roller div::after {
-	position: absolute;
-	display: block;
-	width: 2.7px;
-	height: 2.7px;
-	box-sizing: border-box;
-	margin: -1.35px 0 0 -1.35px;
+	flex: 0 0 auto;
+	width: 10px;
+	height: 10px;
 	border-radius: 50%;
-	background: currentcolor;
-	content: ' ';
+	background-color: #36c275;
+	transition: background-color 0.2s ease;
 }
 
-.lds-roller div:nth-child(1) {
-	animation-delay: -0.036s;
+.kattis-tracker-status-text,
+.kattis-tracker-full-sync {
+	opacity: 100%;
+	transition: opacity 0.15s ease, max-width 0.2s ease, margin 0.2s ease;
 }
 
-.lds-roller div:nth-child(1)::after {
-	top: 23.485px;
-	left: 23.485px;
+.kattis-tracker-status-text {
+	overflow: hidden;
+	white-space: nowrap;
 }
 
-.lds-roller div:nth-child(2) {
-	animation-delay: -0.072s;
+#kattis-tracker-overlay.is-syncing .kattis-tracker-status-indicator {
+	background-color: #f5c542;
 }
 
-.lds-roller div:nth-child(2)::after {
-	top: 25.392px;
-	left: 21px;
+#kattis-tracker-overlay.is-signed-out .kattis-tracker-status-indicator {
+	background-color: #d9534f;
 }
 
-.lds-roller div:nth-child(3) {
-	animation-delay: -0.108s;
+#kattis-tracker-overlay button {
+	padding: 4px 8px;
+	border: none;
+	border-radius: 4px;
+	background-color: #fff;
+	color: #222;
+	font: inherit;
+	cursor: pointer;
 }
 
-.lds-roller div:nth-child(3)::after {
-	top: 26.591px;
-	left: 18.106px;
+#kattis-tracker-overlay button:disabled {
+	opacity: 60%;
+	cursor: not-allowed;
 }
 
-.lds-roller div:nth-child(4) {
-	animation-delay: -0.144s;
+#kattis-tracker-overlay .kattis-tracker-collapse {
+	display: grid;
+	width: 26px;
+	height: 26px;
+	place-items: center;
+	padding: 0;
 }
 
-.lds-roller div:nth-child(4)::after {
-	top: 27px;
-	left: 15px;
+.kattis-tracker-chevron {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-top: 2px solid currentcolor;
+	border-right: 2px solid currentcolor;
+	transform: rotate(45deg);
+	transition: transform 0.2s ease;
 }
 
-.lds-roller div:nth-child(5) {
-	animation-delay: -0.18s;
+#kattis-tracker-overlay.is-collapsed {
+	gap: 8px;
+	max-width: 64px;
+	padding-left: 8px;
 }
 
-.lds-roller div:nth-child(5)::after {
-	top: 26.591px;
-	left: 11.894px;
+#kattis-tracker-overlay.is-collapsed .kattis-tracker-status-text,
+#kattis-tracker-overlay.is-collapsed .kattis-tracker-full-sync {
+	max-width: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	opacity: 0%;
+	pointer-events: none;
 }
 
-.lds-roller div:nth-child(6) {
-	animation-delay: -0.216s;
-}
-
-.lds-roller div:nth-child(6)::after {
-	top: 25.392px;
-	left: 9px;
-}
-
-.lds-roller div:nth-child(7) {
-	animation-delay: -0.252s;
-}
-
-.lds-roller div:nth-child(7)::after {
-	top: 23.485px;
-	left: 6.515px;
-}
-
-.lds-roller div:nth-child(8) {
-	animation-delay: -0.288s;
-}
-
-.lds-roller div:nth-child(8)::after {
-	top: 21px;
-	left: 4.608px;
-}
-
-@keyframes lds-roller {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
+#kattis-tracker-overlay.is-collapsed .kattis-tracker-chevron {
+	transform: rotate(225deg);
 }
